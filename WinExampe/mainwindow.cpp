@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include<QStatusBar>
+#include<QDesktopWidget>
+#include<QApplication>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -37,16 +39,16 @@ MainWindow::MainWindow(QWidget *parent)
 }
 void MainWindow::line(){
     centerWidget->setDrawType(0);
-     centerWidget->update();
+    centerWidget->update();
 }
 
 void MainWindow::ellipse(){
     centerWidget->setDrawType(1);
-     centerWidget->update();
+    centerWidget->update();
 }
 void MainWindow::rectangle(){
     centerWidget->setDrawType(2);
-     centerWidget->update();
+    centerWidget->update();
 
 }
 MainWindow::~MainWindow()
