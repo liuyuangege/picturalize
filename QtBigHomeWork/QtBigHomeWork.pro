@@ -17,10 +17,15 @@ SOURCES += main.cpp\
     leftwidget.cpp \
     rightwidget.cpp \
     ball.cpp \
-    paintlabel.cpp
+    paintlabel.cpp \
+    baffle.cpp
 
 HEADERS  += mainwindow.h \
     leftwidget.h \
     rightwidget.h \
     ball.h \
-    paintlabel.h
+    paintlabel.h \
+    baffle.h
+
+RESOURCES += \
+    image.qrc

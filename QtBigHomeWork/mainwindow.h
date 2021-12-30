@@ -6,6 +6,9 @@
 #include"rightwidget.h"
 #include<QSplitter>
 #include<QTimer>
+
+#include"baffle.h"
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -16,6 +19,8 @@ public:
     void StopTimer();//停止定时器
     void resumeTimer();//重启定时器
     RightWidget* getRightWidget(){return right;}
+    void keyPressEvent(QKeyEvent * event);
+
 protected slots:
     void timeToShow();
 private:

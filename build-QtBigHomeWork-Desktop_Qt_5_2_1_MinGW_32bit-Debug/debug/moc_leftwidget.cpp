@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_LeftWidget_t {
-    QByteArrayData data[4];
-    char stringdata[30];
+    QByteArrayData data[5];
+    char stringdata[42];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,9 +32,10 @@ static const qt_meta_stringdata_LeftWidget_t qt_meta_stringdata_LeftWidget = {
 QT_MOC_LITERAL(0, 0, 10),
 QT_MOC_LITERAL(1, 11, 7),
 QT_MOC_LITERAL(2, 19, 0),
-QT_MOC_LITERAL(3, 20, 8)
+QT_MOC_LITERAL(3, 20, 8),
+QT_MOC_LITERAL(4, 29, 11)
     },
-    "LeftWidget\0addBall\0\0stopBall\0"
+    "LeftWidget\0addBall\0\0stopBall\0changepoint\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -44,7 +45,7 @@ static const uint qt_meta_data_LeftWidget[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -52,10 +53,12 @@ static const uint qt_meta_data_LeftWidget[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x0a,
-       3,    0,   25,    2, 0x0a,
+       1,    0,   29,    2, 0x0a,
+       3,    0,   30,    2, 0x0a,
+       4,    0,   31,    2, 0x0a,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -69,6 +72,7 @@ void LeftWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->addBall(); break;
         case 1: _t->stopBall(); break;
+        case 2: _t->changepoint(); break;
         default: ;
         }
     }
@@ -100,13 +104,13 @@ int LeftWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

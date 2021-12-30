@@ -5,6 +5,8 @@ INPUT(
 ./release\rightwidget.o
 ./release\ball.o
 ./release\paintlabel.o
+./release\baffle.o
+./release\qrc_image.o
 ./release\moc_mainwindow.o
 ./release\moc_leftwidget.o
 ./release\moc_rightwidget.o

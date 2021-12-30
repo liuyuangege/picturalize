@@ -6,6 +6,7 @@
 #include<QLineEdit>
 #include<QPushButton>
 #include"paintlabel.h"
+#include<sstream>
 class MainWindow;
 class LeftWidget : public QWidget
 {
@@ -18,11 +19,13 @@ signals:
 public slots:
     void addBall();//添加小球
     void stopBall();//控制定时器的启动与暂停
+    void changepoint();
 private:
     QLabel *xLabel,*yLabel,*radiusLabel,
     *speedLabel,*angleLabel,*colorLabel;
     QLineEdit *xEdit,*yEdit,*radiusEdit,*speedEdit,*angleEdit;
-    QPushButton *addButton,*stopButton;
+    QLabel*point,*pointshow;
+    QPushButton *addButton,*stopButton,*updatepoint;
     PaintLabel*colorPreview;
     MainWindow *pmain; //指向主窗口的指针
 };

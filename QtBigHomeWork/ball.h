@@ -18,6 +18,14 @@ public:
     void draw(QPainter *p); //绘制小球
     void move(); //在指定的方向上移动 1 步
     void checkCollision(Ball &b);//碰撞监测
+    double getX(){return x;}
+    double getY(){return y;}
+    void setX(double x){this->x= x;}
+    void setY(double y){this->y= y;}
+    void setAngle(double angle){this->angle=angle;}
+    double getAngle(){return angle;}
+    double getRadius(){return radius;}
+    void setRadius(double radius){this->radius=radius;}
 private:
     double x,y; //小球的中心为位置
     double radius; //小球半径

@@ -5,7 +5,7 @@
 #include <QPainter>
 #include <QString>
 #include "mainwindow.h"
-
+#include<sstream>
 LeftWidget::LeftWidget(QWidget *parent) :
     QWidget(parent)
 {
@@ -22,6 +22,10 @@ LeftWidget::LeftWidget(QWidget *parent) :
     angleLabel->setText(tr("角度:"));
     colorLabel=new QLabel(this);
     colorLabel->setText(tr("颜色:"));
+    point=new QLabel(this);
+    point->setText(tr("分数:"));
+    pointshow=new QLabel(this);
+    pointshow->setText(tr("0"));
 
     xEdit=new QLineEdit("100",this);
     yEdit=new QLineEdit("50",this);
@@ -32,7 +36,7 @@ LeftWidget::LeftWidget(QWidget *parent) :
     colorPreview=new PaintLabel(this);
     colorPreview->setText(tr(" ")); //初始字符串确定控件大小
 
-
+    updatepoint=new QPushButton(tr("更新分数"),this);
     addButton=new QPushButton(tr("添加"),this);
     stopButton=new QPushButton(tr("暂停"),this);
     QGridLayout *mainLayout=new QGridLayout(this);
@@ -46,15 +50,24 @@ LeftWidget::LeftWidget(QWidget *parent) :
     mainLayout->addWidget(speedEdit,3,1);
     mainLayout->addWidget(angleLabel,4,0);
     mainLayout->addWidget(angleEdit,4,1);
-    mainLayout->addWidget(colorLabel,5,0);
-    mainLayout->addWidget(colorPreview,5,1);
-    mainLayout->addWidget(addButton,6,0);
-    mainLayout->addWidget(stopButton,6,1);
+    mainLayout->addWidget(point,5,0);
+    mainLayout->addWidget(pointshow,5,1);
+    mainLayout->addWidget(colorLabel,6,0);
+    mainLayout->addWidget(colorPreview,6,1);
+    mainLayout->addWidget(addButton,7,0);
+    mainLayout->addWidget(stopButton,7,1);
+    mainLayout->addWidget(updatepoint,5,3);
     setLayout(mainLayout);
     connect(addButton,SIGNAL(clicked()),this,SLOT(addBall()));
     connect(stopButton,SIGNAL(clicked()),this,SLOT(stopBall()));
+    connect(updatepoint,SIGNAL(clicked()),this,SLOT(changepoint()));
 }
-
+void LeftWidget::changepoint()
+{
+    RightWidget *right=pmain->getRightWidget();
+    QString str=QString::number(right->point);
+    pointshow->setText(str);
+}
 
 void LeftWidget::addBall(){
     RightWidget *right=pmain->getRightWidget();

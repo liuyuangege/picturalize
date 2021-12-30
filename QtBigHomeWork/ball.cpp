@@ -23,7 +23,7 @@ void Ball::move(){
     double dx,dy;
     const double PI=3.14159;
     //speed*=0.99;阻尼效应
-    if(speed==0.1)speed=0;
+    //if(speed==0.1)speed=0;
     dx=speed*std::sin(angle*PI/180);
     dy=speed*std::cos(angle*PI/180);
     x+=dx;
@@ -50,6 +50,7 @@ void Ball::checkBoundary(){
 }
 
 void Ball::checkCollision(Ball &b){
+    if(radius==0)return;
     double dx,dy;
     dx=x-b.x;
     dy=y-b.y;
